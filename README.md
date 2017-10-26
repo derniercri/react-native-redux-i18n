@@ -8,14 +8,14 @@ Inspired by [redux-react-native-i18n](https://github.com/derzunov/redux-react-na
 You need to install `react-native-i18n` first... cf. [instructions](https://github.com/AlexanderZaytsev/react-native-i18n/blob/master/README.md)
 
 ```shell
-$ npm install react-native-i18n-redux --save
+$ npm install react-native-redux-i18n --save
 ```
 
 ## Usage :
 
 ```javascript
 // app/i18n/index.js
-  import i18n from 'react-native-i18n-redux'
+  import i18n from 'react-native-redux-i18n'
   import translations from './translations'
 
   i18n.fallbacks = true
@@ -43,7 +43,7 @@ $ npm install react-native-i18n-redux --save
 // app/reducers/index.js
 import { combineReducers } from 'redux'
 
-import { reducer as i18n } from 'react-native-i18n-redux'
+import { reducer as i18n } from 'react-native-redux-i18n'
 import other from './other'
 
 export default combineReducers({
@@ -56,7 +56,7 @@ export default combineReducers({
 import { createStore, combineReducers } from 'redux'
 ...
 
-import { reducer as i18n } from 'react-native-i18n-redux'
+import { reducer as i18n } from 'react-native-redux-i18n'
 ...
 
 export default createStore(combineReducers(i18n, ...))
@@ -71,7 +71,7 @@ export default createStore(combineReducers(i18n, ...))
   import { connect } from 'react-redux'
   import React from 'react'
   ...
-  import { Loc, setLocale } from 'react-native-i18n-redux'
+  import { Loc, setLocale } from 'react-native-redux-i18n'
 
   const Home = () => (
     <View>
@@ -97,7 +97,7 @@ Also you can use it as described in `react-native-i18n`
 ```javascript
 // app/index.js
 
-import I18n from 'react-native-i18n-redux'
+import I18n from 'react-native-redux-i18n'
 
 class Demo extends React.Component {
   render () {
