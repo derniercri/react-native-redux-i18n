@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Provide I18n to your React Native application with Redux",
   "license": "MIT",
-  "author": "Matthieu Pinte",
+  "author": "matthieupinte",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
