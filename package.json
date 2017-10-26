@@ -1,5 +1,5 @@
 {
-  "name": "react-native-redux-18n",
+  "name": "react-native-redux-i18n",
   "version": "0.0.1",
   "description": "Provide I18n to your React Native application with Redux",
   "license": "MIT",
