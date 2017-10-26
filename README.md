@@ -11,17 +11,34 @@ You need to install `react-native-i18n` first... cf. [instructions](https://gith
 $ npm install react-native-redux-i18n --save
 ```
 
-## Usage :
+## Inside the box :
+
+```javascript
+import I18n, { reducer, setLocale, Loc } from 'react-native-redux-i18n'
+
+setLocale(locale: string)
+// dispatch an action
+// { type: `SET_LOCALE`, payload: { locale } }
+
+reducer
+// keep your state up to date
+
+Loc
+// connected React Native component (Text) on I18n.locale
+// <Loc locKey="greetings" whatever="..." />
+```
+
+## Configure :
 
 ```javascript
 // app/i18n/index.js
-  import i18n from 'react-native-redux-i18n'
+  import I18n from 'react-native-redux-i18n'
   import translations from './translations'
 
-  i18n.fallbacks = true
-  i18n.translations = translations
+  I18n.fallbacks = true
+  I18n.translations = translations
 
-  export default i18n
+  export default I18n
 
 // app/i18n/translations/en.json
   {
@@ -40,18 +57,6 @@ $ npm install react-native-redux-i18n --save
     fr: require('./fr.json'),
   }
 
-// app/reducers/index.js
-import { combineReducers } from 'redux'
-
-import { reducer as i18n } from 'react-native-redux-i18n'
-import other from './other'
-
-export default combineReducers({
-  i18n,
-  other,
-  ...
-})
-
 // app/store/index.js
 import { createStore, combineReducers } from 'redux'
 ...
@@ -61,12 +66,15 @@ import { reducer as i18n } from 'react-native-redux-i18n'
 
 export default createStore(combineReducers(i18n, ...))
 
-
 // app/index.js
   import i18n from 'app/i18n'
   import store from 'app/store'
   ...
+```
 
+## Usage :
+
+```javascript
 // app/scenes/Home.js
   import { connect } from 'react-redux'
   import React from 'react'
