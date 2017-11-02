@@ -83,7 +83,7 @@ export default createStore(combineReducers(i18n, ...))
 
   const Home = () => (
     <View>
-      <Text><Loc locKey="greetings" name="Matthieu" /></Text>
+      <Text><Loc locKey="greetings" name="Matthieu" customizer={(text) => text.toUpperCase()} /></Text>
       <Text><Loc locKey="age" count={27} more="blablabla" /></Text>
 
       <Button onPress={() => setLocale('en-EN')}>en-EN</Button>
@@ -98,6 +98,20 @@ export default createStore(combineReducers(i18n, ...))
 
   export default connect(mapStateToProps, mapDispatchToProps)(Home)
 
+```
+
+You can use a `customizer` props to change the way text will be rendered... samples:
+```jsx
+// uppercase
+<Loc locKey="greetings" customizer={(text) => text.toUpperCase()} />
+```
+```jsx
+// lowercase
+<Loc locKey="greetings" customizer={(text) => text.toLowerCase()} />
+```
+```jsx
+// and more...
+<Loc locKey="greetings" customizer={(text) => text.concat('...')} />
 ```
 
 Also you can use it as described in `react-native-i18n`
