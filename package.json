@@ -9,8 +9,14 @@
     "type": "git",
     "url": "https://github.com/derniercri/react-native-redux-i18n"
   },
-  "keywords": ["react-native", "react-component", "i18n", "redux"],
+  "keywords": [
+    "react-native",
+    "react-component",
+    "i18n",
+    "redux"
+  ],
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-native": "^0.49.3",
     "react-native-i18n": "^2.0.8",
