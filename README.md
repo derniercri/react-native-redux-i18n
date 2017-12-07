@@ -1,7 +1,10 @@
-# react-native-redux-i18n
+<p>
+  <img src="https://user-images.githubusercontent.com/2217014/32893183-d6b3a0fc-cad8-11e7-82e5-7587345ac9c9.png" />
+  </p>
+
 Integrates [react-native-i18n](https://github.com/AlexanderZaytsev/react-native-i18n) based on [I18n.js](https://github.com/fnando/i18n-js) with [redux](https://github.com/reactjs/redux)
 
-Inspired by [redux-react-native-i18n](https://github.com/derzunov/redux-react-native-i18n)
+_Inspired by [redux-react-native-i18n](https://github.com/derzunov/redux-react-native-i18n)_
 
 ## Install :
 
