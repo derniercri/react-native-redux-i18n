@@ -1,6 +1,6 @@
 {
   "name": "react-native-redux-i18n",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Provide I18n to your React Native application with Redux",
   "license": "MIT",
   "author": "matthieupinte",
@@ -16,10 +16,12 @@
     "redux"
   ],
   "dependencies": {
+    "react-native-i18n": "^2.0.8"
+  },
+  "peerDependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-native": "^0.49.3",
-    "react-native-i18n": "^2.0.8",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2"
   }
