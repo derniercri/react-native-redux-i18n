@@ -1,6 +1,6 @@
 {
   "name": "react-native-redux-i18n",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Provide I18n to your React Native application with Redux",
   "license": "MIT",
   "author": "matthieupinte",
@@ -9,12 +9,7 @@
     "type": "git",
     "url": "https://github.com/derniercri/react-native-redux-i18n"
   },
-  "keywords": [
-    "react-native",
-    "react-component",
-    "i18n",
-    "redux"
-  ],
+  "keywords": ["react-native", "react-component", "i18n", "redux"],
   "dependencies": {
     "react-native-i18n": "^2.0.8"
   },
