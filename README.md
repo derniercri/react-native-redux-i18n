@@ -19,9 +19,13 @@ $ npm install react-native-redux-i18n --save
 ```javascript
 import I18n, { reducer, setLocale, Loc } from 'react-native-redux-i18n'
 
-setLocale(locale: string)
+setLocale((locale: string))
 // dispatch an action
 // { type: `SET_LOCALE`, payload: { locale } }
+
+setTranslations((translations: json))
+// dispatch an action
+// { type: `SET_TRANSLATIONS`, payload: { translations } }
 
 reducer
 // keep your state up to date
@@ -58,6 +62,7 @@ Loc
     en: require('./en.json'),
     // 'en-GB': require('./en-GB.json'),
     fr: require('./fr.json'),
+    _version: '1.0' // (you should) use `_version` if you plan to `setTranslations`(update) in-app
   }
 
 // app/store/index.js
@@ -78,6 +83,17 @@ export default createStore(combineReducers(i18n, ...))
 ## Usage :
 
 ```javascript
+// (Optional) app/actions.js
+  // If you plan to fetch and update your translations in-app...
+
+  import { setTranslations } from 'react-native-redux-i18n'
+
+  export const fetchTranslations = () => dispatch => { // async
+    fetch('/translations.json')
+      .then(res => res.json())
+      .then(res => setTranslations(res))
+  }
+
 // app/scenes/Home.js
   import { connect } from 'react-redux'
   import React from 'react'
@@ -100,21 +116,23 @@ export default createStore(combineReducers(i18n, ...))
   })
 
   export default connect(mapStateToProps, mapDispatchToProps)(Home)
-
 ```
 
 You can use a `customizer` props to change the way text will be rendered... samples:
+
 ```jsx
 // uppercase
-<Loc locKey="greetings" customizer={(text) => text.toUpperCase()} />
+<Loc locKey="greetings" customizer={text => text.toUpperCase()} />
 ```
+
 ```jsx
 // lowercase
-<Loc locKey="greetings" customizer={(text) => text.toLowerCase()} />
+<Loc locKey="greetings" customizer={text => text.toLowerCase()} />
 ```
+
 ```jsx
 // and more...
-<Loc locKey="greetings" customizer={(text) => text.concat('...')} />
+<Loc locKey="greetings" customizer={text => text.concat('...')} />
 ```
 
 Also you can use it as described in `react-native-i18n`
@@ -125,10 +143,8 @@ Also you can use it as described in `react-native-i18n`
 import I18n from 'react-native-redux-i18n'
 
 class Demo extends React.Component {
-  render () {
-    return (
-      <Text>{I18n.t('greeting')}</Text>
-    )
+  render() {
+    return <Text>{I18n.t('greeting')}</Text>
   }
 }
 
@@ -137,11 +153,11 @@ I18n.fallbacks = true
 
 I18n.translations = {
   en: {
-    greeting: 'Hi!'
+    greeting: 'Hi!',
   },
   fr: {
-    greeting: 'Bonjour!'
-  }
+    greeting: 'Bonjour!',
+  },
 }
 ```
 
