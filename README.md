@@ -17,7 +17,10 @@ $ npm install react-native-redux-i18n --save
 ## Inside the box :
 
 ```javascript
-import I18n, { reducer, setLocale, Loc } from 'react-native-redux-i18n'
+import I18n, { getLanguages, reducer, setLocale, Loc } from 'react-native-redux-i18n'
+
+getLanguages()
+// get the user preferred locales (cf. react-native-i18n)
 
 setLocale(locale: string)
 // dispatch an action
