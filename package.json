@@ -1,6 +1,6 @@
 {
   "name": "react-native-redux-i18n",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Provide I18n to your React Native application with Redux",
   "license": "MIT",
   "author": "matthieupinte",
